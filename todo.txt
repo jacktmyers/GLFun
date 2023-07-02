@@ -1,4 +1,3 @@
-* Get the box to change colors
 * Change vertex data
 * Do 3D projection (3D model space coords -> 2d projection coords)
 	* Make a cube with the vertex
@@ -19,6 +18,3 @@
 	the model will be fit in the window (This will be a scale operation not done
 	by a shader) the user will be able to click and drag with their mouse to move
 	the model
-
-* Extra:
-	* Make class for loading and unloading shaders
