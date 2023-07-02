@@ -1,4 +1,6 @@
 # GLFun
 Doing some open GL stuff. Cheers.
 ## Screen Grabs
-![image](grabs/colorSquare.gif)
+<p align="center">
+  <img src="https://github.com/jacktmyers/GLFun/blob/main/grabs/colorSqaure.gif"/>
+</p>
