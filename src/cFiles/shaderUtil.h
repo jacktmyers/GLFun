@@ -1,5 +1,5 @@
-#ifndef __SHADERUTIL_H__
-	#define __SHADERUTIL_H__
+#pragma once
+
 #include <string>
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
@@ -12,4 +12,3 @@ class ShaderUtil {
 		void printShaderLog(GLuint shader);
 		void printProgramLog(GLuint program);
 };
-#endif

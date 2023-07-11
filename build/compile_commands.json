@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/jack/Documents/OpenGL/GLFun/build",
+  "command": "/sbin/clang++ -I/home/jack/Documents/OpenGL/GLFun/build -I/home/jack/Documents/OpenGL/GLFun/./src/cFiles -isystem /usr/include/SDL2 -g -o CMakeFiles/Modern.dir/src/cFiles/main.cpp.o -c /home/jack/Documents/OpenGL/GLFun/src/cFiles/main.cpp",
+  "file": "/home/jack/Documents/OpenGL/GLFun/src/cFiles/main.cpp",
+  "output": "CMakeFiles/Modern.dir/src/cFiles/main.cpp.o"
+},
+{
+  "directory": "/home/jack/Documents/OpenGL/GLFun/build",
+  "command": "/sbin/clang++ -g -o src/cFiles/CMakeFiles/cFiles.dir/pipeline.cpp.o -c /home/jack/Documents/OpenGL/GLFun/src/cFiles/pipeline.cpp",
+  "file": "/home/jack/Documents/OpenGL/GLFun/src/cFiles/pipeline.cpp",
+  "output": "src/cFiles/CMakeFiles/cFiles.dir/pipeline.cpp.o"
+},
+{
+  "directory": "/home/jack/Documents/OpenGL/GLFun/build",
+  "command": "/sbin/clang++ -g -o src/cFiles/CMakeFiles/cFiles.dir/shaderUtil.cpp.o -c /home/jack/Documents/OpenGL/GLFun/src/cFiles/shaderUtil.cpp",
+  "file": "/home/jack/Documents/OpenGL/GLFun/src/cFiles/shaderUtil.cpp",
+  "output": "src/cFiles/CMakeFiles/cFiles.dir/shaderUtil.cpp.o"
+}
+]

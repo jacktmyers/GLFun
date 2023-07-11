@@ -1,13 +1,7 @@
-#version 140
+#version 330
 
-uniform vec3 squareColor;
-out vec4 LFragment;
+in vec4 vertexColor;
 
 void main(){
-	vec4 adjustedCoord = (gl_FragCoord - 125)/250;
-	LFragment = vec4(
-	adjustedCoord.x + squareColor.x, 
-	adjustedCoord.y + squareColor.y, 
-	adjustedCoord.y + squareColor.z, 
-	1.0 );
+	gl_FragColor = vec4(gl_FragCoord[3]*20-.4, mod(gl_FragCoord.x/500,1), mod(gl_FragCoord.y/500,1), 1);
 }

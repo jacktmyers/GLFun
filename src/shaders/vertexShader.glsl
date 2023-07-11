@@ -1,7 +1,12 @@
-#version 140
+#version 330
 
-in vec2 LVertexPos2D;
+layout (location = 0) in vec3 aPos; // the position variable has attribute position 0
+
+uniform mat4 modelViewMat;
+uniform mat4 projMat;
+
+//out vec4 vertexColor; // specify a color output to the fragment shader
 
 void main(){
-	gl_Position = vec4(LVertexPos2D.x, LVertexPos2D.y, 0, 1 );
+	gl_Position = projMat * modelViewMat * vec4(aPos,1.0);
 }

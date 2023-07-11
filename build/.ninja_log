@@ -1,0 +1,16 @@
+# ninja log v5
+2	1219	1688453511325264424	CMakeFiles/Modern.dir/src/cFiles/main.cpp.o	5b0f5598e3a56b8e
+2	1267	1688453511368597759	src/cFiles/CMakeFiles/cFiles.dir/pipeline.cpp.o	b7a2e17d82effc2d
+3	1570	1688453511681931109	src/cFiles/CMakeFiles/cFiles.dir/shaderUtil.cpp.o	37e166f17998a808
+1570	1656	1688453511751931113	src/cFiles/libcFiles.a	99dfdfff9c65adaa
+1656	1867	1688453511978597792	Modern	387768b9a9cf082a
+3	1162	1688453519741931544	CMakeFiles/Modern.dir/src/cFiles/main.cpp.o	5b0f5598e3a56b8e
+4	1192	1688453519768598212	src/cFiles/CMakeFiles/cFiles.dir/pipeline.cpp.o	b7a2e17d82effc2d
+4	1473	1688453520051931560	src/cFiles/CMakeFiles/cFiles.dir/shaderUtil.cpp.o	37e166f17998a808
+1473	1534	1688453520098598229	src/cFiles/libcFiles.a	99dfdfff9c65adaa
+1534	1736	1688453520315264908	Modern	387768b9a9cf082a
+9	1593	1688453560638600408	src/cFiles/CMakeFiles/cFiles.dir/pipeline.cpp.o	b7a2e17d82effc2d
+8	1614	1688453560655267076	CMakeFiles/Modern.dir/src/cFiles/main.cpp.o	5b0f5598e3a56b8e
+10	1902	1688453560951933758	src/cFiles/CMakeFiles/cFiles.dir/shaderUtil.cpp.o	37e166f17998a808
+1902	1978	1688453561008600428	src/cFiles/libcFiles.a	99dfdfff9c65adaa
+1978	2171	1688453561218600439	Modern	387768b9a9cf082a
