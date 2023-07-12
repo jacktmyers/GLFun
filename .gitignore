@@ -1,7 +1,8 @@
 CMakeFiles
 Modern
 CMakeCache.txt
-libMY_LIB.a
+libCFILES_LIB.a
+libPRIMATIVES_LIB.a
 cmake_install.cmake
-libcFiles.a
 Makefile
+
