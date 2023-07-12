@@ -5,4 +5,5 @@ libCFILES_LIB.a
 libPRIMATIVES_LIB.a
 cmake_install.cmake
 Makefile
+.luarc.json
 
