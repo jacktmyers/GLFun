@@ -9,6 +9,7 @@ class V4{
 		V4(){};
 		V4(float x, float y, float z, float w);
 		float& operator[](int i);
+		//~V4();
 	private:
 		// Variables
 		float xyzw[4];

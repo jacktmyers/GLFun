@@ -1,20 +1,19 @@
-* Change vertex data
-* Do 3D projection (3D model space coords -> 2d projection coords)
-	* Make a cube with the vertex
-	* Change the perspective
-	* Make the faces of the cube have different colors
-	* Move the perspective around the cube while rendering
-* Load an STL to get 3D model space coords
-	* Add a model class that contains coords etc.
+* Load models
+	* Update TM to properly import and STL
+		* Look for pre-existing STL parsers
+			* Adapt those to fit TM
+			* Get homers face to appear
+		* Parse file formats that blender supports
+			* Look for pre-existing parsers
 	* Import the teapot
-	* Add texture data / color
-	* Read the vertex data, try to change data while rendering
-* Scale the model
-* Get use input to move the model about it's center
+	* Add support for texture data / color in TM
+		* Make it toggle-able
+* Get user input to move the perspective
+	* Toggle using the mouse to look around/
+		dragging the focused object around
 * Scale the model automatically, based on the farthest point from the center
+* Do some cloth simulation
+	* Add gravity
+	* Add a cloth class
+	* Allow segments to be deleted on the fly
 
-
-* Final Goal: A little window that will load an STL file specified as input
-	the model will be fit in the window (This will be a scale operation not done
-	by a shader) the user will be able to click and drag with their mouse to move
-	the model

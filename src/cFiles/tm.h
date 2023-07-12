@@ -23,6 +23,7 @@ class TM{
 		void rotateAboutPoint(float yawDeg, float pitchDeg, float rollDeg, V3 point);
 		void rotateAboutCenter(float yawDeg, float pitchDeg, float rollDeg);
 		M44 normalizeCoordsMat();
+		~TM();
 	private:
 		// Variables
 		std::list<V3> triList, colList, normList;

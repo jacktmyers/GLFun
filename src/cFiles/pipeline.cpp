@@ -8,13 +8,17 @@
 #include <stdio.h>
 #define SHADER_DIR "./src/shaders"
 
+Pipeline::~Pipeline(){
+	delete scene;
+	delete shaderManager;
+}
+
 Pipeline::Pipeline(int _screenWidth, int _screenHeight):
 	screenWidth(_screenWidth),
 	screenHeight(_screenHeight){
 	gProgramID = 0; // Shader Program
 	shaderManager = new ShaderUtil();
 	scene = new Scene(screenWidth, screenHeight);
-	pix = new unsigned int[screenWidth*screenHeight];
 
 	if(shaderManager == NULL){
 		printf("shaderManager not initialized!\n");
@@ -26,7 +30,7 @@ Pipeline::Pipeline(int _screenWidth, int _screenHeight):
 		initialized = false;	
 		return;
 	}
-	if(!initGL(screenWidth, screenHeight)){
+	if(!initGL()){
 		printf("GL not initialized!\n");
 		initialized = false;
 		return;
@@ -72,7 +76,7 @@ bool Pipeline::initSDL(int screenWidth, int screenHeight){
 	return true;
 }
 
-bool Pipeline::initGL(int screenWidth, int screenHeight){
+bool Pipeline::initGL(){
 	gProgramID = glCreateProgram();	
 	std::string shaderDir = SHADER_DIR;
 	shaderManager->attatchShader(gProgramID, GL_VERTEX_SHADER, shaderDir + "/vertexShader.glsl");
@@ -91,11 +95,13 @@ bool Pipeline::initGL(int screenWidth, int screenHeight){
 }
 
 void Pipeline::run(){
-	SDL_Event event;
+	SDL_Event event; // Valgrind hates this
+	event.type = 0;
 	live = true;
 	while(live){
-			SDL_PollEvent(&event);
-			handleEvent(&event);
+			while(SDL_PollEvent(&event)){
+				handleEvent(&event);
+			}
 			render();	
 	}
 	cleanup();

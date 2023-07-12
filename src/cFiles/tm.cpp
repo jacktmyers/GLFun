@@ -6,6 +6,13 @@
 #include <iostream>
 #include <list>
 
+TM::~TM(){
+	triList.clear();	
+	colList.clear();
+	normList.clear();
+	delete[] verts;
+}
+
 bool TM::loadFromStl(std::string path){
   std::ifstream meshFile; 
 	

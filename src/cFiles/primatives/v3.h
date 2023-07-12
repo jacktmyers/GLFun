@@ -20,6 +20,7 @@ class V3{
 		bool operator==(V3 other);
 		friend std::ostream& operator<<(std::ostream& ostr, V3 v);
 		friend std::istream& operator>>(std::istream& istr,V3& v);
+		//~V3();
 	private:
 		// Variables
 		float xyz[3];

@@ -14,6 +14,7 @@ class M44{
 		void setColumn(int,V4);
 		void setRow(int,V4);
 		void setAsTranslation(V3 vec);
+		//~M44();
 	private:
 		// Variables
 		// Functions

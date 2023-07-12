@@ -40,5 +40,8 @@ target_link_libraries(Modern CFILES_LIB)
 target_link_libraries(Modern PRIMATIVES_LIB)
 
 # Set Debug
-set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+#set(CMAKE_BUILD_TYPE Debug)
 

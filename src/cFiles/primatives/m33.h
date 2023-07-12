@@ -18,6 +18,7 @@ class M33{
 		V3 operator*(V3 v);
 		M33 operator*(M33 m1);
 		M33 operator*(float f);
+		//~M33();
 	private:
 		// Variables
 		V3 rows[3];

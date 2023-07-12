@@ -9,6 +9,7 @@ class Camera{
 		M44 modelViewMat;
 		M44 projMat;
 		// Functions
+		Camera();
 		Camera(float hfov, int _w, int _h);
 		V3 getVD();
 		float getF();

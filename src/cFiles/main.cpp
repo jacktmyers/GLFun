@@ -21,6 +21,8 @@ int main(int argc, char** argv){
 	}
 	
 	pipeline->run();
+	delete pipeline;
+	delete cube;
 	printf("Exiting\n");
 	return 0;
 }

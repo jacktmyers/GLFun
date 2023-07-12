@@ -7,6 +7,9 @@
 #include "camera.h"
 #include "math.h"
 
+Camera::Camera(){
+}
+
 // Constructor field of view in degrees, w and h
 Camera::Camera(float _hfov, int _w, int _h) : hfov(_hfov), w(_w), h(_h) {
 	eye = V3(0.0f, 0.0f, 0.0f); // Where the viewer is
