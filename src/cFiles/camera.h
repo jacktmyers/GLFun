@@ -1,10 +1,13 @@
 #pragma once
 
 #include "primatives/v3.h"
+#include "primatives/m44.h"
 
 class Camera{
 	public:
 		// Variables
+		M44 modelViewMat;
+		M44 projMat;
 		// Functions
 		Camera(float hfov, int _w, int _h);
 		V3 getVD();

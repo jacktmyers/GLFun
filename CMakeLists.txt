@@ -9,8 +9,8 @@ add_library(CFILES_LIB ${CFILES}/camera.cpp ${CFILES}/pipeline.cpp ${CFILES}/sha
 
 # Create Library for primatives
 set(PRIMATIVES ./src/cFiles/primatives)
-set(PRIMATIVES_HEADER_FILES ${PRIMATIVES}/m33.h ${PRIMATIVES}/v3.h)
-add_library(PRIMATIVES_LIB ${PRIMATIVES}/m33.cpp ${PRIMATIVES}/v3.cpp
+set(PRIMATIVES_HEADER_FILES ${PRIMATIVES}/m33.h ${PRIMATIVES}/v3.h ${PRIMATIVES}/m44.h ${PRIMATIVES}/v4.h)
+add_library(PRIMATIVES_LIB ${PRIMATIVES}/m33.cpp ${PRIMATIVES}/v3.cpp ${PRIMATIVES}/m44.cpp ${PRIMATIVES}/v4.cpp
 		${PRIMATIVES_HEADER_FILES})
 
 # Create executable

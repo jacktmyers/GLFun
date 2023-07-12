@@ -4,9 +4,11 @@ layout (location = 0) in vec3 aPos; // the position variable has attribute posit
 
 uniform mat4 modelViewMat;
 uniform mat4 projMat;
+uniform mat4 colorMat;
 
-//out vec4 vertexColor; // specify a color output to the fragment shader
+out vec4 vertexColor; // specify a color output to the fragment shader
 
 void main(){
 	gl_Position = projMat * modelViewMat * vec4(aPos,1.0);
+	vertexColor = colorMat * vec4(aPos,1.0);
 }

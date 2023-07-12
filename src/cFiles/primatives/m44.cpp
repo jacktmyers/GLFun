@@ -6,6 +6,14 @@ M44::M44(){
 	rows[2] = V4(0,0,0,0);
 	rows[3] = V4(0,0,0,0);
 }
+
+M44::M44(V4 x,V4 y,V4 z,V4 w){
+	rows[0] = x;
+	rows[1] = y;
+	rows[2] = z;
+	rows[3] = w;
+}
+
 void M44::setColumn(int col, V4 data){
 	if((col > 3) || (col < 0)){
 		printf("M44.setColumn incorrect column number!\n");

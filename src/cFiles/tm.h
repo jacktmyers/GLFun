@@ -2,6 +2,7 @@
 
 #include "primatives/v3.h"
 #include "primatives/m33.h"
+#include "primatives/m44.h"
 #include <string>
 #include <list>
 
@@ -21,6 +22,7 @@ class TM{
 		void setCenter(V3 newCenter);
 		void rotateAboutPoint(float yawDeg, float pitchDeg, float rollDeg, V3 point);
 		void rotateAboutCenter(float yawDeg, float pitchDeg, float rollDeg);
+		M44 normalizeCoordsMat();
 	private:
 		// Variables
 		std::list<V3> triList, colList, normList;

@@ -15,6 +15,8 @@ Camera::Camera(float _hfov, int _w, int _h) : hfov(_hfov), w(_w), h(_h) {
 	float hfovd = hfov / 180.0f * (float)M_PI; // The angle of the field of view
 	// The vector to the top left of the view screen
 	c = V3(-(float)w / 2.0f, (float)h / 2.0f, -(float)w / (2.0f * tan(hfovd / 2.0f)));
+	modelViewMat = M44();
+	projMat = M44();
 }
 
 // Get the view direction
@@ -33,16 +35,17 @@ void Camera::setIntrinsics(float near, float far) {
 	float scf = near / getF();
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//gluPerspective(hfov, (float)w/(float)h, near, far);
 	glFrustum(-(float)w / 2.0f * scf, (float)w / 2.0f * scf, -(float)h / 2.0f * scf, (float)h / 2.0f * scf, near, far);
-	glMatrixMode(GL_MODELVIEW);
+	glGetFloatv(GL_PROJECTION_MATRIX, (GLfloat*)&projMat);
 }
 
 // Position the camera with GL
 void Camera::setExtrinsics(){
+	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	V3 L = eye + getVD() * 100.0f;
 	gluLookAt(eye[0], eye[1], eye[2], L[0], L[1], L[2], -b[0], -b[1], -b[2]);
+	glGetFloatv(GL_MODELVIEW_MATRIX, (GLfloat*)&modelViewMat);
 }
 
 void Camera::positionAndOrient(V3 newEye, V3 lookAt, V3 up) {

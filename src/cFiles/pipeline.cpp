@@ -148,19 +148,17 @@ void Pipeline::render(){
 		// Cube Spinnning
 		currMesh->rotateAboutCenter(.2, .3, 1);
 
-		// Get Model View Matrix
-		GLfloat modelViewMat[16];
-		glGetFloatv(GL_MODELVIEW_MATRIX, modelViewMat);
-
-		// Get Projection matrix
-		GLfloat projMat[16];
-		glGetFloatv(GL_PROJECTION_MATRIX, projMat);
-
 		// Load matrices into shader
 		GLint location = glGetUniformLocation(gProgramID, "modelViewMat");
-		glUniformMatrix4fv(location, (GLsizei)1, GL_FALSE, modelViewMat);
+		glUniformMatrix4fv(location, (GLsizei)1, GL_FALSE, 
+				(GLfloat*)&scene->camera->modelViewMat);
 		location = glGetUniformLocation(gProgramID, "projMat");
-		glUniformMatrix4fv(location, (GLsizei)1, GL_FALSE, projMat);
+		glUniformMatrix4fv(location, (GLsizei)1, GL_FALSE, 
+				(GLfloat*)&scene->camera->projMat);
+		location = glGetUniformLocation(gProgramID, "colorMat");
+		M44 colorMat = currMesh->normalizeCoordsMat();
+		glUniformMatrix4fv(location, (GLsizei)1, GL_TRUE, 
+				(GLfloat*)&colorMat);
 		
 		//printf("ERROR: %X\n", glGetError());
 		

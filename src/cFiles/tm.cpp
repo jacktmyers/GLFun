@@ -183,3 +183,39 @@ void TM::rotateAboutPoint(float yawDeg, float pitchDeg, float rollDeg, V3 point)
 		norms[ni] = (rotMat*(norms[ni]-point))+point;
 	}
 }
+
+// Normalize XYZ coords matrix
+M44 TM::normalizeCoordsMat(){
+	float x0,x1,y0,y1,z0,z1;
+	x0=x1= verts[0][0];
+	y0=y1= verts[0][1];
+	z0=z1= verts[0][2];
+
+	// Get the largest and smallest coords
+	for(int vi=1;	vi < vertsMemN; vi++){
+		V3 currVert = verts[vi];
+		if(currVert[0] > x1){
+			x1 = currVert[0];
+		}else if(currVert[0] < x0){
+			x0 = currVert[0];
+		}
+
+		if(currVert[1] > y1){
+			y1 = currVert[1];
+		}else if(currVert[1] < y0){
+			y0 = currVert[1];
+		}
+
+		if(currVert[2] > z1){
+			z1 = currVert[2];
+		}else if(currVert[2] < z0){
+			z0 = currVert[2];
+		}
+	}
+
+	// Create normalizing matrix
+	return M44(V4(1/(x1-x0),0,0,-x0/(x1-x0)),
+						 V4(0,1/(y1-y0),0,-y0/(y1-y0)),
+						 V4(0,0,1/(z1-z0),-z0/(z1-z0)),
+						 V4(0,0,0,1));
+}
