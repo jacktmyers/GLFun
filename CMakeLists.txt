@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.26)
 project(Modern)
 
+# Create Library for externals
+set(EXTERNALS ./src/externals)
+set(EXTERNALS_HEADER_FILES ${EXTERNALS}/stl_reader/stl_reader.h)
+add_library(EXTERNALS_LIB ${EXTERNALS_HEADER_FILES})
+set_target_properties(EXTERNALS_LIB PROPERTIES LINKER_LANGUAGE CXX)
+
 # Create Library for cfiles
 set(CFILES ./src/cFiles)
 set(CFILES_HEADER_FILES ${CFILES}/camera.h ${CFILES}/pipeline.h ${CFILES}/shaderUtil.h ${CFILES}/tm.h ${CFILES}/scene.h)
@@ -38,10 +44,11 @@ target_link_libraries(Modern ${GLEW_LIBRARIES})
 # Custom
 target_link_libraries(Modern CFILES_LIB)
 target_link_libraries(Modern PRIMATIVES_LIB)
+target_link_libraries(Modern EXTERNALS_LIB)
 
 # Set Debug
 set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-#set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Debug)
 

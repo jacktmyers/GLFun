@@ -3,6 +3,7 @@ Modern
 CMakeCache.txt
 libCFILES_LIB.a
 libPRIMATIVES_LIB.a
+libEXTERNALS_LIB.a
 cmake_install.cmake
 Makefile
 .luarc.json

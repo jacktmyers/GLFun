@@ -8,7 +8,7 @@ int main(int argc, char** argv){
 	Pipeline* pipeline = new Pipeline(SCREEN_WIDTH, SCREEN_HEIGHT);
 	// Load our meshes into a scene
 	TM* cube = new TM();
-	cube->loadFromStl("./stls/cube.stl");
+	cube->loadFromStl("./stls/homermask.stl");
 	cube->setCenter(V3(0,0,-20));
 	pipeline->scene->addTM(cube);
 	// Look at the cube

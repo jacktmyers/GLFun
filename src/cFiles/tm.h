@@ -4,17 +4,18 @@
 #include "primatives/m33.h"
 #include "primatives/m44.h"
 #include <string>
-#include <list>
+#include <vector>
 
 class TM{
 	public:
 		// Variables
 		V3* verts, *norms;
 		unsigned int* tris;
-		int vertsMemN; // Number of verts loaded into memory
-		int trisMemN; // Number of tris loaded into memory
+		unsigned int vertsMemN; // Number of verts loaded into memory
+		unsigned int trisMemN; // Number of tris loaded into memory
+		unsigned int normsMemN;
 		// Functions
-		TM(){};
+		TM();
     bool loadFromStl(std::string path);
 		bool putInMemory();
 		V3 getCenter();
@@ -26,6 +27,7 @@ class TM{
 		~TM();
 	private:
 		// Variables
-		std::list<V3> triList, colList, normList;
+		std::vector<float> vertVec, normVec;
+		std::vector<unsigned int> triVec, solidVec;
 		// Functions
 };
